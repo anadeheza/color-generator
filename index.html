@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="palette">
+        <div class="color-card" onclick="copyColor(this)">
+            <div class="color"></div>
+            <div class="hex-code">#FFFF</div>
+        </div>
+        <div class="color-card" onclick="copyColor(this)">
+            <div class="color"></div>
+            <div class="hex-code">#FFFF</div>
+        </div>
+        <div class="color-card" onclick="copyColor(this)">
+            <div class="color"></div>
+            <div class="hex-code">#FFFF</div>
+        </div>
+        <div class="color-card" onclick="copyColor(this)">
+            <div class="color"></div>
+            <div class="hex-code">#FFFF</div>
+        </div>
+        <div class="color-card" onclick="copyColor(this)">
+            <div class="color"></div>
+            <div class="hex-code">#FFFF</div>
+        </div>
+    </div>
+
+    <button id="generate-btn">New Palette</button>
+    <div class="toast" id="toast">Code copied :)</div>
+    <script src="script.js"></script>
+</body>
+</html>
