@@ -1,5 +1,4 @@
-const genBtn = document.getElementById('generate-btn')
-const colorCards = document.getElementById('color-card')
+const colorCards = document.querySelectorAll('.color-card')
 const toast = document.getElementById('toast')
 
 function generateColor() {
@@ -35,8 +34,6 @@ function copyColor(card) {
         console.error('failed to copi :( ->', err)
     })
 }
-
-genBtn.addEventListener('click', updatePalette) 
 
 window.addEventListener('keydown', (e) => {
     const codigo = e.code
