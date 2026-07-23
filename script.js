@@ -11,8 +11,24 @@ function generateColor() {
     return color 
 }
 
+
+function toggleLock(event, btn) {
+    event.stopPropagation()
+    const card = btn.parentElement
+    card.classList.toggle('locked')
+
+    if(card.classList.contains('locked')) {
+        btn.innerText = '🔒'
+    } else {
+        btn.innerText = '🔓'
+    }
+}
+
 function updatePalette() {
+
     colorCards.forEach(card => {
+        if(card.classList.contains('locked')) return
+
         const randColor = generateColor()
         const colorBox = card.querySelector('.color')
         const hexText = card.querySelector('.code')
@@ -23,6 +39,7 @@ function updatePalette() {
 }
 
 function copyColor(card) {
+
     const hexCode = card.querySelector('.code').innerText
 
     navigator.clipboard.writeText(hexCode).then(() => {
