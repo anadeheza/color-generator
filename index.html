@@ -7,31 +7,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="controls">
+        <label for="relSelect">Style:</label>
+        <select id="relSelect" onchange="updatePalette()">
+            <option value="random" selected>Random (Default)</option>
+            <option value="analogous">Analogous</option>
+            <option value="monochromatic">Monochromatic</option>
+            <option value="complementary">Complementary</option>
+        </select>
+    </div>
     <div class="container" id="palette">
         <div class="color-card">
             <button class="lock-btn" onclick="toggleLock(event, this)">🔓</button>
             <div class="color" onclick="copyColor(this.parentElement)"></div>
-            <div class="code" onclick="copyColor(this.parentElement)">#FFFF</div>
+            <div class="code" onclick="copyColor(this.parentElement)">#FFFFFF</div>
         </div>
         <div class="color-card">
             <button class="lock-btn" onclick="toggleLock(event, this)">🔓</button>
             <div class="color" onclick="copyColor(this.parentElement)"></div>
-            <div class="code" onclick="copyColor(this.parentElement)">#FFFF</div>
+            <div class="code" onclick="copyColor(this.parentElement)">#FFFFFF</div>
         </div>
         <div class="color-card">
             <button class="lock-btn" onclick="toggleLock(event, this)">🔓</button>
             <div class="color" onclick="copyColor(this.parentElement)"></div>
-            <div class="code" onclick="copyColor(this.parentElement)">#FFFF</div>
+            <div class="code" onclick="copyColor(this.parentElement)">#FFFFFF</div>
         </div>
         <div class="color-card">
             <button class="lock-btn" onclick="toggleLock(event, this)">🔓</button>
             <div class="color" onclick="copyColor(this.parentElement)"></div>
-            <div class="code" onclick="copyColor(this.parentElement)">#FFFF</div>
+            <div class="code" onclick="copyColor(this.parentElement)">#FFFFFF</div>
         </div>
         <div class="color-card">
             <button class="lock-btn" onclick="toggleLock(event, this)">🔓</button>
             <div class="color" onclick="copyColor(this.parentElement)"></div>
-            <div class="code" onclick="copyColor(this.parentElement)">#FFFF</div>
+            <div class="code" onclick="copyColor(this.parentElement)">#FFFFFF</div>
         </div>
     </div>
 
