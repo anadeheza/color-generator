@@ -44,10 +44,10 @@ h1 {
     margin-left: 10px;
     border-radius: 5px;
     border: 1px solid #4b2e0092;
-    background-color: #f0f0f0;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.2s ease;
+    background: none;
 }
 
 .action:hover {
@@ -122,3 +122,4 @@ h1 {
 .toast.show {
     opacity: 1;
 }
+

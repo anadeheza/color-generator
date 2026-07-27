@@ -1,4 +1,4 @@
-const colorCards = document.querySelectorAll('.color-card')
+const colors = document.querySelectorAll('.color-card')
 const toast = document.getElementById('toast')
 const relSelect = document.getElementById('relSelect')
 
@@ -76,7 +76,7 @@ function updatePalette() {
     const selectMode = relSelect.value 
     const newColors = generateRelationColors(selectMode)
 
-    colorCards.forEach((card, i) => {
+    colors.forEach((card, i) => {
         if(card.classList.contains('locked')) return
 
         const randColor = newColors[i]
@@ -104,7 +104,54 @@ function copyColor(card) {
 
 function exportPNG() {
     const canvas = document.createElement('canvas')
-    
+    const ctx = canvas.getContext('2d')
+
+    const cw = 200
+    const ch = 400
+    const totalColors = colors.length
+
+    canvas.width = cw * totalColors
+    canvas.height = ch 
+
+    colors.forEach((card, i) => {
+        const hexCode = card.querySelector('.code').innerText
+        const colorBox = card.querySelector('.color')
+        const bg = window.getComputedStyle(colorBox).backgroundColor
+
+        ctx.fillStyle = bg 
+        ctx.fillRect(i * cw, 0, cw, ch - 60)
+
+        ctx.fillStyle = '#FFFFFF'
+        ctx.fillRect(i * cw, ch - 60, cw, 60)
+
+        ctx.fillStyle = '#333333'
+        ctx.font = 'bold 18px "Segoe UI", sans-serif'
+        ctx.textAlign = 'center'
+        ctx.fillText(hexCode, (i * cw) + (cw / 2), ch - 22)
+    })
+
+    const link = document.createElement('a')
+    link.download = 'color-palette.png'
+    link.href = canvas.toDataURL('image/png')
+    link.click()
+}
+
+function copyCSS() {
+    let cssText = ':root {\n'
+    colors.forEach((card, i) => {
+        const hexCode = card.querySelector('.code').innerText
+        cssText += `    --color-${i + 1}: ${hexCode}; \n`
+    })
+    cssText += '}'
+
+    navigator.clipboard.writeText(cssText).then(() => {
+        toast.innerText = "CSS variables copied :)"
+        toast.classList.add('show')
+        setTimeout(() => {
+            toast.classList.remove('show')
+            toast.innerText = "Code copied :)"
+        }, 1500);
+    })
 }
 
 window.addEventListener('keydown', (e) => {
