@@ -39,6 +39,21 @@ h1 {
     cursor: pointer;
 }
 
+.action {
+    padding: 8px 14px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #4b2e0092;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.action:hover {
+    background-color: #e0e0e0;
+}
+
 .color-card {
     position: relative;
     flex: 1;

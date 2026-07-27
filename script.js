@@ -102,6 +102,11 @@ function copyColor(card) {
     })
 }
 
+function exportPNG() {
+    const canvas = document.createElement('canvas')
+    
+}
+
 window.addEventListener('keydown', (e) => {
     const codigo = e.code
     if((codigo === 'Space' || codigo === 'Enter') && document.activeElement === relSelect) {
