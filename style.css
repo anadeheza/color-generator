@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #ffff ;
+    background-color: #fff ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,19 +39,8 @@ h1 {
     cursor: pointer;
 }
 
-.action {
-    padding: 8px 14px;
-    margin-left: 10px;
-    border-radius: 5px;
-    border: 1px solid #4b2e0092;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.2s ease;
-    background: none;
-}
-
-.action:hover {
-    background-color: #e0e0e0;
+.formats {
+    margin-left: 15px;
 }
 
 .color-card {
@@ -121,5 +110,73 @@ h1 {
 
 .toast.show {
     opacity: 1;
+}
+
+.exports {
+    margin-top: 15px;
+}
+
+.action {
+    padding: 8px 14px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #4b2e0092;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    background: none;
+}
+
+.action:hover {
+    background-color: #e0e0e0;
+}
+
+
+.fav-container {
+    width: 100%;
+    max-width: 1000px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.fav-container h2 {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.fav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.fav-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fdfdfd;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.fav-colors {
+    display: flex;
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.fav-color-box {
+    flex: 1;
+    height: 100%;
+}
+
+.fav-actions {
+    display: flex;
+    gap: 8px;
+
 }
 

@@ -16,9 +16,15 @@
             <option value="complementary">Complementary</option>
         </select>
 
-        <button onclick="exportPNG()" class="action">Save as PNG</button>
-        <button onclick="copyCSS()" class="action">Copy CSS</button>
-    </div>
+        <label for="codeSel" class="formats">Code:</label>
+        <select id="codeSel" onchange="changeColorCode()">
+            <option value="hex" selected>HEX</option>
+            <option value="rgb">RGB</option>
+            <option value="hsl">HSL</option>
+        </select>
+
+        <button onclick="saveToFav()" class="action favorite">♡</button>
+        </div>
     <div class="container" id="palette">
         <div class="color-card">
             <button class="lock-btn" onclick="toggleLock(event, this)">🔓</button>
@@ -48,6 +54,17 @@
     </div>
 
     <div class="hint">Press space to generate a new palette</div>
+
+    <div class="exports">
+        <button onclick="exportPNG()" class="action">Save as PNG</button>
+        <button onclick="copyCSS()" class="action">Copy CSS</button>
+    </div>
+
+    <div class="fav-container">
+        <h2>Favourite Palettes</h2>
+        <div class="fav-list" id="favList"></div>
+    </div>
+
     <div class="toast" id="toast">Code copied :)</div>
     <script src="script.js"></script>
 </body>
