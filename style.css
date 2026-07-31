@@ -138,6 +138,24 @@ body {
     opacity: 100%;
 }
 
+.action1 {
+    padding: 7px 15px;
+    padding-bottom: 8px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #744c30;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    background: none;
+    color: #5d2700;
+    opacity: 80%;
+}
+
+.action1:hover {
+    opacity: 100%;
+}
+
 .action.favs {
     font-size: 20px;
 }
