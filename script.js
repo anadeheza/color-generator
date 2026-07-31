@@ -94,19 +94,15 @@ function generateRelationColors(mode) {
 }
 
 function contrast(card, light) {
-    let textColor = '#ffffff'
-    let lockBg = 'rgba(255, 255, 255, 0.25)'
-    let lockBorder = 'rgba(255, 255, 255, 0.4)'
-    if(light > 60) {
-        textColor = '#1a1a1a'
+    let lockBg = 'rgba(255, 255, 255, 0.1)'
+    let lockBorder = 'rgba(0, 0, 0, 0.2)'
+    if(light < 60) {
         lockBg = 'rgba(0, 0, 0, 0.15)'
-        lockBorder = 'rgba(0, 0, 0, 0.2)'
+        lockBorder = 'rgba(255, 255, 255, 0.4)'
     } 
 
-    const codeText = card.querySelector('.code')
     const lockBtn = card.querySelector('.lock-btn')
 
-    codeText.style.color = textColor
     lockBtn.style.backgroundColor = lockBg
     lockBtn.style.borderColor = lockBorder
 }
@@ -323,7 +319,6 @@ function loadFavPalette(i) {
 
         colorBox.style.backgroundColor = hexColor
         codeText.innerText = hslToSelected(h, s, l)
-        contrast(card, l)
     })
 }
 
@@ -364,8 +359,8 @@ function renderFavs() {
         favCard.innerHTML = `
             ${colorBoxesHTML}
             <div class="fav-actions">
-                <button class="action-btn" onclick="loadFavPalette(${index})">Load</button>
-                <button class="action-btn" onclick="deleteFav(${index})" style="color: red;">Delete</button>
+                <button class="load" onclick="loadFavPalette(${index})">Load</button>
+                <button class="delete" onclick="deleteFav(${index})" style="color: red;">Delete</button>
             </div>
         `;
 

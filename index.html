@@ -8,23 +8,25 @@
 </head>
 <body>
     <div class="controls">
-        <label for="relSelect">Style:</label>
-        <select id="relSelect" onchange="updatePalette()">
-            <option value="random" selected>Random (Default)</option>
-            <option value="analogous">Analogous</option>
-            <option value="monochromatic">Monochromatic</option>
-            <option value="complementary">Complementary</option>
-        </select>
+        <div class="selections">
+            <label for="relSelect">Style:</label>
+            <select id="relSelect" onchange="updatePalette()">
+                <option value="random" selected>Random (Default)</option>
+                <option value="analogous">Analogous</option>
+                <option value="monochromatic">Monochromatic</option>
+                <option value="complementary">Complementary</option>
+            </select>
 
-        <label for="codeSel" class="formats">Code:</label>
-        <select id="codeSel" onchange="changeColorCode()">
-            <option value="hex" selected>HEX</option>
-            <option value="rgb">RGB</option>
-            <option value="hsl">HSL</option>
-        </select>
+            <label for="codeSel" class="formats">Code:</label>
+            <select id="codeSel" onchange="changeColorCode()">
+                <option value="hex" selected>HEX</option>
+                <option value="rgb">RGB</option>
+                <option value="hsl">HSL</option>
+            </select>
+        </div>
 
         <button onclick="saveToFav()" class="action favorite">♡</button>
-        <button onclick="openCloseFavs()" class="action fav-list-btn">Favourites</button>
+        <button onclick="openCloseFavs()" class="action fav-list-btn">Saved</button>
         </div>
     <div class="container" id="palette">
         <div class="color-card">
@@ -62,7 +64,7 @@
     </div>
 
 
-    <div class="overlay" id="overlay" onclick="openFavs()"></div>
+    <div class="overlay" id="overlay" onclick="openCloseFavs()"></div>
     <div class="fav-sidebar" id="fav-sidebar">
         <div class="sidebar-header">
             <h2>Favourite Palettes</h2>
