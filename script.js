@@ -207,6 +207,8 @@ function copyColor(card) {
     const colorCode = card.querySelector('.code').innerText
 
     navigator.clipboard.writeText(colorCode).then(() => {
+        
+        toast.innerText = "Code copied :)"
         toast.classList.add('show')
         setTimeout(() => {
             toast.classList.remove('show')
@@ -263,7 +265,6 @@ function copyCSS() {
         toast.classList.add('show')
         setTimeout(() => {
             toast.classList.remove('show')
-            toast.innerText = "Code copied :)"
         }, 1500);
     })
 }
