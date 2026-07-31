@@ -334,6 +334,13 @@ function deleteFav(index) {
     renderFavs() 
 }
 
+function openCloseFavs() {
+    const sidebar = document.getElementById('fav-sidebar')
+    const overlay = document.getElementById('overlay')
+    sidebar.classList.toggle('open')
+    overlay.classList.toggle('show')
+}
+
 function renderFavs() {
     const favs = getFavs()
     favList.innerHTML =  ''
@@ -379,6 +386,12 @@ window.addEventListener('keydown', (e) => {
     if(codigo === 'Space' || codigo === 'Enter') {
         e.preventDefault()
         updatePalette()
+    }
+
+    if(codigo === 'Escape') {
+        const sidebar = document.getElementById('fav-sidebar')
+        if(sidebar.classList.contains('open')) openCloseFavs()
+        return
     }
 })
 

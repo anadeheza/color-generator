@@ -24,6 +24,7 @@
         </select>
 
         <button onclick="saveToFav()" class="action favorite">♡</button>
+        <button onclick="openCloseFavs()" class="action fav-list-btn">Favourites</button>
         </div>
     <div class="container" id="palette">
         <div class="color-card">
@@ -60,8 +61,13 @@
         <button onclick="copyCSS()" class="action">Copy CSS</button>
     </div>
 
-    <div class="fav-container">
-        <h2>Favourite Palettes</h2>
+
+    <div class="overlay" id="overlay" onclick="openFavs()"></div>
+    <div class="fav-sidebar" id="fav-sidebar">
+        <div class="sidebar-header">
+            <h2>Favourite Palettes</h2>
+            <div class="close-btn" onclick="openCloseFavs()">X</div>
+        </div>
         <div class="fav-list" id="favList"></div>
     </div>
 
