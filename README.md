@@ -1,5 +1,5 @@
 # Color Palette Generator
-
+![screenshot](image.png)
 A simple web app where you can generate and manage color palettes, made with HTML, CSS and JavaScript
 
 ## Features / How to use
